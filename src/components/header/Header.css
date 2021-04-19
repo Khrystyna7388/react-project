@@ -1,0 +1,15 @@
+header {
+    height: 100px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-image {
+    width: 50px;
+}
+
+.wishlist-image {
+    width: 35px;
+}
