@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import {Header} from "./components";
+import {Header, Products} from "./components";
 
 const App = () => {
   return (
     <div>
       <Header/>
+      <Products/>
 
     </div>
   );

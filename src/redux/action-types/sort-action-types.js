@@ -1,0 +1,6 @@
+
+const SET_SORT_PRODUCTS = 'SET_SORT_PRODUCTS';
+
+export {
+    SET_SORT_PRODUCTS
+}

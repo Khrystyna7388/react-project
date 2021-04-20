@@ -1,5 +1,5 @@
 header {
-    height: 100px;
+    height: 90px;
     background-color: #000000;
     color: #ffffff;
     display: flex;
@@ -7,9 +7,14 @@ header {
 }
 
 .cart-image {
-    width: 50px;
+    width: 60px;
 }
 
 .wishlist-image {
     width: 35px;
+}
+
+.icons {
+    margin-right: 20px;
+    margin-top: 18px;
 }
