@@ -1,15 +1,31 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import {Header, Products} from "./components";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
+import {Header, ProductDetails, Products} from "./components";
 
 const App = () => {
-  return (
-    <div>
-      <Header/>
-      <Products/>
+    return (
+        <div>
+            <Router>
+                <Header/>
 
-    </div>
-  );
+
+                <Switch>
+                    <Route path="/products" exact>
+                        <Products/>
+                    </Route>
+                    <Route path="/products/:id">
+                        <ProductDetails/>
+                    </Route>
+
+                </Switch>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

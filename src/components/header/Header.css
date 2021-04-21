@@ -5,16 +5,3 @@ header {
     display: flex;
     justify-content: space-between;
 }
-
-.cart-image {
-    width: 60px;
-}
-
-.wishlist-image {
-    width: 35px;
-}
-
-.icons {
-    margin-right: 20px;
-    margin-top: 18px;
-}

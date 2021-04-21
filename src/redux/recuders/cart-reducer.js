@@ -1,8 +1,8 @@
-import {ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART, SET_LIST_OF_CART} from "../action-types";
+import {ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART, SET_CART_ITEMS} from "../action-types";
 
 const initialState = {
     productsInCart: [],
-    listOfCart: []
+    cartItems: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -19,10 +19,10 @@ const reducer = (state = initialState, action) => {
                 productsInCart: state.productsInCart.filter(el => action.payload !== el)
             }
         }
-        case SET_LIST_OF_CART: {
+        case SET_CART_ITEMS: {
             return {
                 ...state,
-                listOfCart: action.payload
+                cartItems: action.payload
             }
         }
         default:
