@@ -3,9 +3,10 @@ import './App.css';
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    Redirect
 } from "react-router-dom";
-import {Header, ProductDetails, Products} from "./components";
+import {Header, ProductDetailsPage, Products} from "./components";
 
 const App = () => {
     return (
@@ -15,11 +16,14 @@ const App = () => {
 
 
                 <Switch>
+                    <Route path="/" exact>
+                        <Redirect to="/products"/>
+                    </Route>
                     <Route path="/products" exact>
                         <Products/>
                     </Route>
                     <Route path="/products/:id">
-                        <ProductDetails/>
+                        <ProductDetailsPage/>
                     </Route>
 
                 </Switch>

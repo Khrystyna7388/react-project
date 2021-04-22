@@ -2,13 +2,13 @@ import {SET_SINGLE_PRODUCT} from "../action-types/single-product-types";
 import {setIsLoading} from "./loading-action-creators";
 import {URL} from "./url";
 
-const setSingleProduct = (dispath) => ({type: SET_SINGLE_PRODUCT, dispath});
+const setSingleProduct = (payload) => ({type: SET_SINGLE_PRODUCT, payload});
 
-const fetchProductDetails = (url) => async (dispatch) => {
-    // if (!id) return;
+const fetchProductDetails = (id) => async (dispatch) => {
+    if (!id) return;
     try {
         dispatch(setIsLoading(true));
-        const response = await fetch(url);
+        const response = await fetch(`${URL}/${id}`);
         const data = await response.json();
         dispatch(setSingleProduct(data));
     } catch (e) {

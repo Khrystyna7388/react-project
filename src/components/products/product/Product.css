@@ -13,14 +13,6 @@ img {
     height: 100%;
 }
 
-button {
-    background-color: #000000;
-    color: #ffffff;
-    width: 200px;
-    height: 40px;
-    margin: 0 20px 0 35px;
-}
-
 .title {
     height: 70px;
     text-align: center;
@@ -28,10 +20,4 @@ button {
 
 .price {
     text-align: center;
-}
-
-.description {
-    height: 190px;
-    text-align: justify;
-    padding: 0 20px;
 }
