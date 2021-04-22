@@ -2,7 +2,7 @@ import {ADD_PRODUCT_TO_WISHLIST, REMOVE_PRODUCT_FROM_WISHLIST, SET_WISHLIST_ITEM
 
 const initialState = {
     productsInWishlist: [],
-    listOfWishlist: []
+    wishlistItems: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -22,7 +22,7 @@ const reducer = (state = initialState, action) => {
         case SET_WISHLIST_ITEMS: {
             return {
                 ...state,
-                listOfWishlist: action.payload
+                wishlistItems: action.payload
             }
         }
         default:

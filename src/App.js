@@ -7,6 +7,7 @@ import {
     Redirect
 } from "react-router-dom";
 import {Header, ProductDetailsPage, Products} from "./components";
+import {CartPage} from "./components/cart/CartPage";
 
 const App = () => {
     return (
@@ -24,6 +25,9 @@ const App = () => {
                     </Route>
                     <Route path="/products/:id">
                         <ProductDetailsPage/>
+                    </Route>
+                    <Route path="/cart">
+                        <CartPage/>
                     </Route>
 
                 </Switch>
