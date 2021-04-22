@@ -3,3 +3,5 @@ export * from './products/Products';
 export * from './loading/Loading';
 export * from './product-details/ProductDetailsPage';
 export * from './cart-n-wishlist-buttons/CartAndWishlistButtons';
+export * from './cart/CartPage';
+export * from './wishlist/WishlistPage';

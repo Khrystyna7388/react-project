@@ -6,8 +6,8 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
-import {Header, ProductDetailsPage, Products} from "./components";
-import {CartPage} from "./components/cart/CartPage";
+import {Header, ProductDetailsPage, Products, CartPage, WishlistPage} from "./components";
+
 
 const App = () => {
     return (
@@ -28,6 +28,9 @@ const App = () => {
                     </Route>
                     <Route path="/cart">
                         <CartPage/>
+                    </Route>
+                    <Route path="/wishlist">
+                        <WishlistPage/>
                     </Route>
 
                 </Switch>
