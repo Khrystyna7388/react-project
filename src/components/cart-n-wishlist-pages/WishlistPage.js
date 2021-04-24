@@ -21,7 +21,8 @@ export const WishlistPage = () => {
         <div>
             {isLoading && <Loading/>}
 
-            {wishlistItems.filter(el => productsInWishlist.includes(el.id)).map(el =>
+            {!isLoading && !!wishlistItems &&
+                wishlistItems.filter(el => productsInWishlist.includes(el.id)).map(el =>
             <Item
             product={el}
             />

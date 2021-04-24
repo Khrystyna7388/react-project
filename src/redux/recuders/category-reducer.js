@@ -1,15 +1,15 @@
-import {SET_CATEGORY} from "../action-types/category-action-types";
+import {SET_VALUES} from "../services/value-action-types";
 
 const initialState = {
-    category: []
+    categoryProducts: []
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_CATEGORY:
+        case SET_VALUES:
             return {
                 ...state,
-                category: action.payload
+                categoryProducts: action.payload
             }
         default:
             return state

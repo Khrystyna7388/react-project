@@ -26,7 +26,7 @@ export const ProductDetailsPage = () => {
         <div>
             {isLoading && <Loading/>}
 
-            {!isLoading && singleProduct &&
+            {!isLoading && !!singleProduct &&
             <ProductInProductDetails
                 product={singleProduct}
             />

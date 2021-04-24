@@ -18,7 +18,6 @@ export const Products = () => {
         }))
 
     const dispatch = useDispatch();
-    const history = useHistory();
 
     useEffect(() => {
         dispatch(fetchData(URL))
@@ -37,9 +36,6 @@ export const Products = () => {
                     <Product
                         product={el}
                     />
-                    <button className="more-details-button" onClick={() =>
-                        history.push(`/products/${el.id}`)}>More Details
-                    </button>
                 </div>
             ))}
 
