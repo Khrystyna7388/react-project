@@ -1,9 +1,10 @@
 import React, {useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchProductDetails} from "../../redux/action-creators/single-product-action-creators";
 import {Loading} from "../loading/Loading";
 import {ProductInProductDetails} from "./ProductInProductDetails";
+import {fetchData} from "../../redux/services/value-action-creactors";
+import {URL} from "../../redux/services/url";
 
 export const ProductDetailsPage = () => {
     const {singleProduct, isLoading} =
@@ -18,7 +19,7 @@ export const ProductDetailsPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchProductDetails(params.id));
+        dispatch(fetchData(`${URL}/${params.id}`))
     }, [])
 
     return (
@@ -27,7 +28,7 @@ export const ProductDetailsPage = () => {
 
             {!isLoading && singleProduct &&
             <ProductInProductDetails
-                productInDetails={singleProduct}
+                product={singleProduct}
             />
             }
         </div>

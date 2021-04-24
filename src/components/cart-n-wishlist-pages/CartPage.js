@@ -1,7 +1,9 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchCartItems} from "../../redux/action-creators";
 import {Loading} from "../loading/Loading";
+import {Item} from "./Item";
+import {fetchData} from "../../redux/services/value-action-creactors";
+import {URL} from "../../redux/services/url";
 
 export const CartPage = () => {
     const {isLoading, cartItems, productsInCart} =
@@ -13,7 +15,7 @@ export const CartPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchCartItems());
+        dispatch(fetchData(URL))
     }, [])
 
     return (
@@ -21,8 +23,12 @@ export const CartPage = () => {
             {isLoading && <Loading/>}
 
             {cartItems.filter(el => productsInCart.includes(el.id))
-                .map(el => <div>{el.title}</div>)}
-
+                .map(el =>
+                    <div>
+                        <Item
+                            product={el}
+                        />
+                    </div>)}
         </div>
     )
 }

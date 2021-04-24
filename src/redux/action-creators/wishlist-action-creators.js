@@ -14,5 +14,5 @@ const toggleItemInWishlist = (id) => (dispatch, getState) => {
 export {
     addProductToWishlist,
     removeProductFromWishlist,
-    toggleItemInWishlist
+    toggleItemInWishlist,
 }

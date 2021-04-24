@@ -20,6 +20,7 @@ export const Icons = () => {
             <span>{productsInCart.length}</span>
 
             <img className="wishlist-image"
+                 onClick={() => history.push('/wishlist')}
                  src={WISHLIST_URL} alt={WISHLIST_ALT}/>
             <span>{productsInWishlist.length}</span>
         </div>

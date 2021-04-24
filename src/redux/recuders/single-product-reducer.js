@@ -1,4 +1,4 @@
-import {SET_SINGLE_PRODUCT} from "../action-types/single-product-types";
+import {SET_VALUES} from "../services/value-action-types";
 
 const initialState = {
     singleProduct: null
@@ -6,7 +6,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_SINGLE_PRODUCT: {
+        case SET_VALUES: {
             return {
                 ...state,
                 singleProduct: action.payload

@@ -1,4 +1,5 @@
 import {ADD_PRODUCT_TO_WISHLIST, REMOVE_PRODUCT_FROM_WISHLIST, SET_WISHLIST_ITEMS} from "../action-types";
+import {SET_VALUES} from "../services/value-action-types";
 
 const initialState = {
     productsInWishlist: [],
@@ -19,7 +20,7 @@ const reducer = (state = initialState, action) => {
                 productsInWishlist: state.productsInWishlist.filter(el => action.payload !== el)
             }
         }
-        case SET_WISHLIST_ITEMS: {
+        case SET_VALUES: {
             return {
                 ...state,
                 wishlistItems: action.payload

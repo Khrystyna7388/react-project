@@ -1,0 +1,22 @@
+
+.wrapper {
+    display: flex;
+}
+
+.divImage {
+    width: 50%;
+    height: 400px;
+}
+
+.productImage {
+    margin: 0 25% 0 25%;
+}
+
+.divText {
+    width: 50%;
+}
+
+.cartAndWishButtons {
+    text-align: right;
+    margin-right: 15%;
+}

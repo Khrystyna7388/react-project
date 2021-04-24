@@ -1,10 +1,12 @@
 import React, {useEffect} from "react";
 import './Products.css';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchProducts} from "../../redux/action-creators";
 import {Product} from "./product/Product";
 import {useHistory} from "react-router-dom";
 import {Loading} from "../loading/Loading";
+import {fetchData} from "../../redux/services/value-action-creactors";
+import {URL} from "../../redux/services/url";
+
 
 export const Products = () => {
     const {products, isLoading} =
@@ -19,8 +21,9 @@ export const Products = () => {
     const history = useHistory();
 
     useEffect(() => {
-        dispatch(fetchProducts());
+        dispatch(fetchData(URL))
     }, [])
+
 
     return (
         <div className="products-wrapper">
