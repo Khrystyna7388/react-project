@@ -22,16 +22,12 @@ export const MenClothingCategory = () => {
             {isLoading && <Loading/>}
 
             {!isLoading && !!categoryProducts &&
-            categoryProducts.filter(el => el.category === 'men clothing')
-                .map(el => <div>{el.title}</div>)
-
-                // .map(el => <div style={{width: '60%', margin: '0 20% 0 20%'}}>
-                //     <Product product={el}/>
-                // </div>)
+            categoryProducts.filter(el => el.category === 'men\'s clothing')
+                .map(el => <div style={{width: '60%', margin: '0 20% 0 20%'}}>
+                    <Product product={el}/>
+                </div>)
             }
         </div>
     )
-
 }
 
-//TODO

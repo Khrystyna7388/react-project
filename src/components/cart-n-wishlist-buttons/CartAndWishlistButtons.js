@@ -5,7 +5,7 @@ export const CartAndWishlistButtons = ({onCartClick, onWishlistClick, isInCart, 
 
     (
         <div>
-            <div>
+            <div className="buttons">
                 <button onClick={onWishlistClick}>
                     {isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
                 </button>

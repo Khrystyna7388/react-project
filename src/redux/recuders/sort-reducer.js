@@ -1,15 +1,15 @@
-import {SET_SORT_PRODUCTS} from "../action-types/sort-action-types";
+import {SET_VALUES} from "../services/value-action-types";
 
 const initialState = {
-    sortProducts: []
+    sortProductsList: []
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_SORT_PRODUCTS: {
+        case SET_VALUES: {
             return {
                 ...state,
-                sortProducts: action.payload
+                sortProductsList: action.payload
             }
         }
         default:

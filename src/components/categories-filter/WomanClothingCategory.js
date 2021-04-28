@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {URL} from "../../redux/services/url";
 import {Loading} from "../loading/Loading";
+import {Product} from "../products/product/Product";
 
 export const WomanClothingCategory = () => {
     const {isLoading, categoryProducts} =
@@ -16,17 +17,18 @@ export const WomanClothingCategory = () => {
         dispatch(fetchData(URL));
     }, [])
 
-    return(
+    return (
         <div>
             {isLoading && <Loading/>}
 
             {!isLoading && !!categoryProducts &&
-            categoryProducts.filter(el => el.category === 'woman clothing')
-                .map(el => <div>{el.title}</div>)
+            categoryProducts.filter(el => el.category === 'women\'s clothing')
+                .map(el => <div style={{width: '60%', margin: '0 20% 0 20%'}}>
+                    <Product product={el}/>
+                </div>)
             }
         </div>
     )
 
 }
 
-//TODO

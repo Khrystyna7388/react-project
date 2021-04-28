@@ -6,6 +6,7 @@ import {Loading} from "../loading/Loading";
 import {Product} from "../products/product/Product";
 
 export const ElectronicCategory = () => {
+
     const {categoryProducts, isLoading} =
         useSelector(({category: {categoryProducts}, loading: {isLoading}}) => ({
             categoryProducts,
@@ -26,11 +27,11 @@ export const ElectronicCategory = () => {
                 .map(el =>
                     <div style={{width: '60%', margin: '0 20% 0 20%'}}>
                         <Product product={el}/>
-                    </div>)
+                    </div>
+                )
             }
 
         </div>
     )
 }
 
-//todo cartNwishlist buttons

@@ -8,5 +8,6 @@ export * from './cart-n-wishlist-pages/WishlistPage';
 export * from './categories-filter/MenClothingCategory';
 export * from './categories-filter/JeweleryCategory';
 export * from './categories-filter/ElectronicCategory';
-export * from './categories-filter/Categories';
+export * from './categories-filter/CategoriesButtons';
 export * from './categories-filter/WomanClothingCategory';
+export * from './sort/SortProducts';
