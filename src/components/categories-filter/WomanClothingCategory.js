@@ -23,7 +23,7 @@ export const WomanClothingCategory = () => {
 
             {!isLoading && !!categoryProducts &&
             categoryProducts.filter(el => el.category === 'women\'s clothing')
-                .map(el => <div style={{width: '60%', margin: '0 20% 0 20%'}}>
+                .map(el => <div key={el.id} style={{width: '60%', margin: '0 20% 0 20%'}}>
                     <Product product={el}/>
                 </div>)
             }

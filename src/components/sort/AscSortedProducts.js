@@ -5,12 +5,13 @@ import {URL} from "../../redux/services/url";
 import {Loading} from "../loading/Loading";
 import {Product} from "../products/product/Product";
 
-export const JeweleryCategory = () => {
-    const {isLoading, categoryProducts} =
-        useSelector(({loading: {isLoading}, category: {categoryProducts}}) => ({
+export const AscSortedProducts = () => {
+    const {isLoading, sortedProductsList} =
+        useSelector(({loading: {isLoading}, sort: {sortedProductsList}}) => ({
             isLoading,
-            categoryProducts
+            sortedProductsList
         }))
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -21,12 +22,13 @@ export const JeweleryCategory = () => {
         <div>
             {isLoading && <Loading/>}
 
-            {!isLoading && !!categoryProducts &&
-            categoryProducts.filter(el => el.category === 'jewelery')
+            {!isLoading && !!sortedProductsList &&
+            sortedProductsList.sort((a, b) => a.price - b.price)
                 .map(el => <div key={el.id} style={{width: '60%', margin: '0 20% 0 20%'}}>
                     <Product product={el}/>
                 </div>)
             }
+
         </div>
     )
 }

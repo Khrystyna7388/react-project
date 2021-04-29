@@ -1,28 +1,28 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {URL} from "../../redux/services/url";
 import {Loading} from "../loading/Loading";
 import {Product} from "../products/product/Product";
 
-export const JeweleryCategory = () => {
-    const {isLoading, categoryProducts} =
-        useSelector(({loading: {isLoading}, category: {categoryProducts}}) => ({
+export const DescSortedProducts = () => {
+    const {isLoading, sortedProductsList} =
+        useSelector(({loading: {isLoading}, sort: {sortedProductsList}}) => ({
             isLoading,
-            categoryProducts
+            sortedProductsList
         }))
     const dispatch = useDispatch();
 
-    useEffect(() => {
+    useDispatch(() => {
         dispatch(fetchData(URL))
     }, [])
 
-    return(
+    return (
         <div>
             {isLoading && <Loading/>}
 
-            {!isLoading && !!categoryProducts &&
-            categoryProducts.filter(el => el.category === 'jewelery')
+            {!isLoading && !!sortedProductsList &&
+            sortedProductsList.sort((a, b) => b.price - a.price)
                 .map(el => <div key={el.id} style={{width: '60%', margin: '0 20% 0 20%'}}>
                     <Product product={el}/>
                 </div>)

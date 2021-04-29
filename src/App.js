@@ -13,7 +13,13 @@ import {
     CartPage,
     WishlistPage,
     CategoriesButtons,
-    ElectronicCategory, JeweleryCategory, MenClothingCategory, WomanClothingCategory, SortProducts
+    ElectronicCategory,
+    JeweleryCategory,
+    MenClothingCategory,
+    WomanClothingCategory,
+    SelectComponent,
+    AscSortedProducts,
+    DescSortedProducts
 } from "./components";
 
 
@@ -23,7 +29,7 @@ const App = () => {
         <div>
             <Router>
                 <Header/>
-                <SortProducts/>
+                <SelectComponent/>
                 {/*<CategoriesButtons/>*/}
 
                 <Switch>
@@ -54,6 +60,14 @@ const App = () => {
                     </Route>
                     <Route path="/categories/woman-clothing">
                         <WomanClothingCategory/>
+                    </Route>
+
+                    <Route path="/asc=sort">
+                        <AscSortedProducts/>
+                    </Route>
+
+                    <Route path="/desc=sort">
+                        <DescSortedProducts/>
                     </Route>
 
                 </Switch>

@@ -6,26 +6,28 @@ import {fetchData} from "../../redux/services/value-action-creactors";
 import {URL} from "../../redux/services/url";
 
 export const WishlistPage = () => {
-   const {isLoading, productsInWishlist, wishlistItems} =
-    useSelector(({loading: {isLoading}, wishlist: {productsInWishlist, wishlistItems}}) => ({
-        isLoading,
-        productsInWishlist,
-        wishlistItems
-    }))
+    const {isLoading, productsInWishlist, wishlistItems} =
+        useSelector(({loading: {isLoading}, wishlist: {productsInWishlist, wishlistItems}}) => ({
+            isLoading,
+            productsInWishlist,
+            wishlistItems
+        }))
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchData(URL));
     }, [])
-    return(
+    return (
         <div>
             {isLoading && <Loading/>}
 
             {!isLoading && !!wishlistItems &&
-                wishlistItems.filter(el => productsInWishlist.includes(el.id)).map(el =>
-            <Item
-            product={el}
-            />
+            wishlistItems.filter(el => productsInWishlist.includes(el.id)).map(el =>
+                <div key={el.id}>
+                    <Item
+                        product={el}
+                    />
+                </div>
             )}
 
         </div>

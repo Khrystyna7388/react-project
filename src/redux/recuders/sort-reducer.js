@@ -1,7 +1,7 @@
 import {SET_VALUES} from "../services/value-action-types";
 
 const initialState = {
-    sortProductsList: []
+    sortedProductsList: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
         case SET_VALUES: {
             return {
                 ...state,
-                sortProductsList: action.payload
+                sortedProductsList: action.payload
             }
         }
         default:

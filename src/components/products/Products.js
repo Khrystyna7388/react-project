@@ -32,7 +32,6 @@ export const Products = () => {
             {!isLoading && !!products &&
             products.map(el => (
                 <div className="product-item" key={el.id}>
-
                     <Product
                         product={el}
                     />

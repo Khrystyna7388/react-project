@@ -25,7 +25,7 @@ export const CartPage = () => {
             {!isLoading && !!cartItems &&
                 cartItems.filter(el => productsInCart.includes(el.id))
                 .map(el =>
-                    <div>
+                    <div key={el.id}>
                         <Item
                             product={el}
                         />

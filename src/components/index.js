@@ -10,4 +10,6 @@ export * from './categories-filter/JeweleryCategory';
 export * from './categories-filter/ElectronicCategory';
 export * from './categories-filter/CategoriesButtons';
 export * from './categories-filter/WomanClothingCategory';
-export * from './sort/SortProducts';
+export * from './select/SelectComponent';
+export * from './sort/AscSortedProducts';
+export * from './sort/DescSortedProducts';
