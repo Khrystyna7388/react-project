@@ -1,6 +1,8 @@
 import {SET_VALUES} from "../services/value-action-types";
 
-const initialState = {
+const initFromLs = localStorage.getItem('products');
+
+const initialState = initFromLs ? JSON.parse(initFromLs) : {
     products: []
 }
 

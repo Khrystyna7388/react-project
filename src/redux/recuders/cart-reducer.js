@@ -1,7 +1,9 @@
-import {ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART, SET_CART_ITEMS} from "../action-types";
+import {ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART} from "../action-types";
 import {SET_VALUES} from "../services/value-action-types";
 
-const initialState = {
+const initFromLs = localStorage.getItem('cart');
+
+const initialState = initFromLs ? JSON.parse(initFromLs) : {
     productsInCart: [],
     cartItems: []
 }

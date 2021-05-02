@@ -22,14 +22,19 @@ import {
     DescSortedProducts
 } from "./components";
 
-
-
 const App = () => {
     return (
         <div>
             <Router>
                 <Header/>
+                <div style={{backgroundColor: 'black', height: '250px', width: '100%'}}>
+                    <h2 style={{color:'white', textAlign: 'center', marginTop: 0, paddingTop: '100px'}}
+                    >
+                        The best way to predict your future is to create it
+                    </h2>
+                </div>
                 <SelectComponent/>
+
                 {/*<CategoriesButtons/>*/}
 
                 <Switch>
@@ -77,3 +82,6 @@ const App = () => {
 }
 
 export default App;
+
+
+// todo black div with text

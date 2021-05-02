@@ -6,6 +6,7 @@ import wishlistReducer from './wishlist-reducer';
 import loadingReducer from './loading-reducer';
 import categoryReducer from './category-reducer';
 import sortReducer from './sort-reducer';
+import limitReducer from './current-limit-reducer';
 
 
 export const reducer = combineReducers({
@@ -15,5 +16,6 @@ export const reducer = combineReducers({
     wishlist: wishlistReducer,
     loading: loadingReducer,
     category: categoryReducer,
-    sort: sortReducer
+    sort: sortReducer,
+    limit: limitReducer
 })

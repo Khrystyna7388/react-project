@@ -4,3 +4,4 @@ export * from './wishlist-action-creators';
 export * from './loading-action-creators';
 export * from './category-action-creators';
 export * from './sort-action-creators';
+export * from './current-limit-action-creators';

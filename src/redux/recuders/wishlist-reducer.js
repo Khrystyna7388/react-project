@@ -1,7 +1,9 @@
-import {ADD_PRODUCT_TO_WISHLIST, REMOVE_PRODUCT_FROM_WISHLIST, SET_WISHLIST_ITEMS} from "../action-types";
+import {ADD_PRODUCT_TO_WISHLIST, REMOVE_PRODUCT_FROM_WISHLIST} from "../action-types";
 import {SET_VALUES} from "../services/value-action-types";
 
-const initialState = {
+const initFromLs = localStorage.getItem('wishlist');
+
+const initialState = initFromLs ? JSON.parse(initFromLs) : {
     productsInWishlist: [],
     wishlistItems: []
 }

@@ -11,9 +11,11 @@ export const Header = () => {
 
     return (
         <header>
-            <h2 onClick={() => history.push('/')}>STORE</h2>
-            <CategoriesButtons/>
-            <Icons/>
+            <h1 className="store" onClick={() => history.push('/')}>STORE</h1>
+                <CategoriesButtons/>
+            <div className="icons">
+                <Icons/>
+            </div>
         </header>
     )
 }

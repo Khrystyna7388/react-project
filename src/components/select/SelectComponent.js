@@ -2,26 +2,26 @@ import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 
 export const SelectComponent = () => {
-    const [sort, setSort] = useState('');
+    const [select, setSelect] = useState('');
     const history = useHistory()
 
     const onSubmit = (e) => {
-        if(sort === 'asc') {
+        if (select === 'asc') {
             history.push('/asc=sort')
 
-        } else if(sort === 'desc') {
+        } else if (select === 'desc') {
             history.push('/desc=sort')
 
-        } else if(sort === 'electronics') {
+        } else if (select === 'electronics') {
             history.push('/categories/electronics')
 
-        } else if (sort === 'jewelery') {
+        } else if (select === 'jewelery') {
             history.push('/categories/jewelery')
 
-        } else if (sort === 'men-clothing') {
+        } else if (select === 'men-clothing') {
             history.push('/categories/men-clothing')
 
-        } else if (sort === 'woman-clothing') {
+        } else if (select === 'woman-clothing') {
             history.push('/categories/woman-clothing')
         }
 
@@ -29,25 +29,32 @@ export const SelectComponent = () => {
     }
 
     const onChange = (e) => {
-        setSort(e.target.value)
+        setSelect(e.target.value)
     }
 
     return (
         <div>
             <form onSubmit={onSubmit}>
                 <label>
-                    <select onChange={onChange}>
-                        <option value="asc">asc</option>
-                        <option value="desc">desc</option>
+                    <select onChange={onChange} style={{width: '90%', height: '30px'}}>
+                        <option style={{backgroundColor: 'silver'}}>Filter & Sort</option>
+                        <option style={{backgroundColor: 'gainsboro'}}>Sort</option>
+                        <option value="asc">Lowest Price</option>
+                        <option value="desc">Highest Price</option>
+                        <option style={{backgroundColor: 'gainsboro'}}>Filter</option>
                         <option value="electronics">Electronics</option>
                         <option value="jewelery">Jewelery</option>
                         <option value="men-clothing">Men`s Clothing</option>
                         <option value="woman-clothing">Woman`s Clothing</option>
                     </select>
                 </label>
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Submit"
+                       style={{width: "10%", height: '30px', backgroundColor: 'white'}}/>
             </form>
 
         </div>
     )
 }
+
+
+//TODO не клікабельні filter n sort, замінити іфки, create css file

@@ -2,26 +2,29 @@ import React, {useEffect} from "react";
 import './Products.css';
 import {useDispatch, useSelector} from "react-redux";
 import {Product} from "./product/Product";
-import {useHistory} from "react-router-dom";
 import {Loading} from "../loading/Loading";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {URL} from "../../redux/services/url";
+import {qsHelper, setCurrentLimit} from "../../redux/action-creators";
+import {LoadMore} from "../load-more-button/LoadMore";
+import {LIMIT_STEP} from "../../redux/recuders/current-limit-reducer";
 
 
 export const Products = () => {
-    const {products, isLoading} =
+    const {products, isLoading, currentLimit} =
         useSelector(({
-                         products: {products}, loading: {isLoading},
+                         products: {products}, loading: {isLoading}, limit: {currentLimit}
                      }) => ({
             products,
             isLoading,
+            currentLimit
         }))
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchData(URL))
-    }, [])
+        dispatch(fetchData(`${URL}?${qsHelper({limit: currentLimit})}`))
+    }, [currentLimit])
 
 
     return (
@@ -38,6 +41,14 @@ export const Products = () => {
                 </div>
             ))}
 
+            {/*{products.length < 20 && <LoadMore/>}*/}
+            {products.length < 20 &&
+            <button onClick={() => setCurrentLimit(prev => prev += LIMIT_STEP)}>load more</button>
+            }
+
+
         </div>
     )
 }
+
+//todo load more doesn`t work
