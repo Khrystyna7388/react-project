@@ -26,26 +26,21 @@ export const Products = () => {
         dispatch(fetchData(`${URL}?${qsHelper({limit: currentLimit})}`))
     }, [currentLimit])
 
+    console.log(products)
 
     return (
         <div className="products-wrapper">
-            {isLoading &&
-            <Loading/>}
 
-            {!isLoading && !!products &&
-            products.map(el => (
-                <div className="product-item" key={el.id}>
-                    <Product
-                        product={el}
-                    />
-                </div>
-            ))}
+            {isLoading && <Loading/>}
 
-            {/*{products.length < 20 && <LoadMore/>}*/}
+            {!isLoading && !!products && products.map(el => <div className="product-item" key={el.id}>
+                <Product product={el}/>
+            </div>)}
+
+            {/*/!*{products.length < 20 && <LoadMore/>}*!/*/}
             {products.length < 20 &&
             <button onClick={() => setCurrentLimit(prev => prev += LIMIT_STEP)}>load more</button>
             }
-
 
         </div>
     )
