@@ -22,9 +22,13 @@ export const Products = () => {
 
     const dispatch = useDispatch();
 
+    // useEffect(() => {
+    //     dispatch(fetchData(`${URL}?${qsHelper({limit: currentLimit})}`))
+    // }, [currentLimit])
+
     useEffect(() => {
-        dispatch(fetchData(`${URL}?${qsHelper({limit: currentLimit})}`))
-    }, [currentLimit])
+        dispatch(fetchData(URL))
+    }, [])
 
     console.log(products)
 
@@ -38,9 +42,9 @@ export const Products = () => {
             </div>)}
 
             {/*/!*{products.length < 20 && <LoadMore/>}*!/*/}
-            {products.length < 20 &&
-            <button onClick={() => setCurrentLimit(prev => prev += LIMIT_STEP)}>load more</button>
-            }
+            {/*{products.length < 20 &&*/}
+            {/*<button onClick={() => setCurrentLimit(prev => prev += LIMIT_STEP)}>load more</button>*/}
+            {/*}*/}
 
         </div>
     )
