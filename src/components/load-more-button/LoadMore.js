@@ -1,6 +1,6 @@
 import React from "react";
 import {setCurrentLimit} from "../../redux/action-creators";
-import {LIMIT_STEP} from "../../redux/recuders/current-limit-reducer";
+import {LIMIT_STEP} from "../../redux/recuders/currentLimit";
 
 export const LoadMore = () => {
     return (
@@ -9,3 +9,5 @@ export const LoadMore = () => {
         </div>
     )
 }
+
+//todo

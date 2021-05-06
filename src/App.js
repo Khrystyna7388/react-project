@@ -21,18 +21,14 @@ import {
     AscSortedProducts,
     DescSortedProducts
 } from "./components";
+import {BlackDiv} from "./components/black-part-with-text/BlackDiv";
 
 const App = () => {
     return (
         <div>
             <Router>
                 <Header/>
-                <div style={{backgroundColor: 'black', height: '250px', width: '100%'}}>
-                    <h2 style={{color:'white', textAlign: 'center', marginTop: 0, paddingTop: '100px'}}
-                    >
-                        The best way to predict your future is to create it
-                    </h2>
-                </div>
+                <BlackDiv/>
                 <SelectComponent/>
 
                 {/*<CategoriesButtons/>*/}

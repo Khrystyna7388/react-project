@@ -13,3 +13,4 @@ export * from './categories-filter/WomanClothingCategory';
 export * from './select/SelectComponent';
 export * from './sort/AscSortedProducts';
 export * from './sort/DescSortedProducts';
+export * from './black-part-with-text/BlackDiv';

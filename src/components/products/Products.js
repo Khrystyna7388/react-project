@@ -4,10 +4,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {Product} from "./product/Product";
 import {Loading} from "../loading/Loading";
 import {fetchData} from "../../redux/services/value-action-creactors";
-import {URL} from "../../redux/services/url";
 import {qsHelper, setCurrentLimit} from "../../redux/action-creators";
 import {LoadMore} from "../load-more-button/LoadMore";
-import {LIMIT_STEP} from "../../redux/recuders/current-limit-reducer";
+import {LIMIT_STEP} from "../../redux/recuders/currentLimit";
+import {URL} from "../../redux/services/url";
 
 
 export const Products = () => {
@@ -25,6 +25,10 @@ export const Products = () => {
     // useEffect(() => {
     //     dispatch(fetchData(`${URL}?${qsHelper({limit: currentLimit})}`))
     // }, [currentLimit])
+
+    // useEffect(() => {
+    //     dispatch(fetchData(process.env.REACT_APP_URL))
+    // }, [])
 
     useEffect(() => {
         dispatch(fetchData(URL))

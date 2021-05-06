@@ -2,7 +2,8 @@ import React from "react";
 import './Product.css';
 import {useDispatch, useSelector} from "react-redux";
 import {CartAndWishlistButtons} from "../../cart-n-wishlist-buttons/CartAndWishlistButtons";
-import {toggleItemInCart, toggleItemInWishlist} from "../../../redux/action-creators";
+import {toggleItemInCart} from "../../../redux/services/toggleItemInCart";
+import {toggleItemInWishlist} from "../../../redux/services/toggleItemInWishlist";
 import {useHistory} from "react-router-dom";
 
 export const Product = ({product}) => {

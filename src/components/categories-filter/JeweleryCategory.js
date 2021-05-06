@@ -1,9 +1,9 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../redux/services/value-action-creactors";
-import {URL} from "../../redux/services/url";
 import {Loading} from "../loading/Loading";
 import {Product} from "../products/product/Product";
+import {URL} from "../../redux/services/url";
 
 export const JeweleryCategory = () => {
     const {isLoading, categoryProducts} =

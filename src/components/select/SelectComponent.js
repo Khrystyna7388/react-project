@@ -6,26 +6,30 @@ export const SelectComponent = () => {
     const history = useHistory()
 
     const onSubmit = (e) => {
-        if (select === 'asc') {
-            history.push('/asc=sort')
-
-        } else if (select === 'desc') {
-            history.push('/desc=sort')
-
-        } else if (select === 'electronics') {
-            history.push('/categories/electronics')
-
-        } else if (select === 'jewelery') {
-            history.push('/categories/jewelery')
-
-        } else if (select === 'men-clothing') {
-            history.push('/categories/men-clothing')
-
-        } else if (select === 'woman-clothing') {
-            history.push('/categories/woman-clothing')
-        }
-
         e.preventDefault();
+
+        switch (select) {
+            case 'asc' :
+                history.push('/asc=sort')
+                break;
+            case 'desc' :
+                history.push('/desc=sort')
+                break;
+            case  'electronics' :
+                history.push('/categories/electronics')
+                break;
+            case 'jewelery' :
+                history.push('/categories/jewelery')
+                break;
+            case 'men-clothing' :
+                history.push('/categories/men-clothing')
+                break;
+            case 'woman-clothing' :
+                history.push('/categories/woman-clothing')
+                break;
+            default:
+                alert('Please, select the correct option')
+        }
     }
 
     const onChange = (e) => {
@@ -37,11 +41,11 @@ export const SelectComponent = () => {
             <form onSubmit={onSubmit}>
                 <label>
                     <select onChange={onChange} style={{width: '90%', height: '30px'}}>
-                        <option style={{backgroundColor: 'silver'}}>Filter & Sort</option>
-                        <option style={{backgroundColor: 'gainsboro'}}>Sort</option>
+                        <option selected={true} disabled={true} style={{backgroundColor: 'silver'}}>Filter & Sort</option>
+                        <option disabled={true} style={{backgroundColor: 'gainsboro'}}>Sort</option>
                         <option value="asc">Lowest Price</option>
                         <option value="desc">Highest Price</option>
-                        <option style={{backgroundColor: 'gainsboro'}}>Filter</option>
+                        <option disabled={true} style={{backgroundColor: 'gainsboro'}}>Filter</option>
                         <option value="electronics">Electronics</option>
                         <option value="jewelery">Jewelery</option>
                         <option value="men-clothing">Men`s Clothing</option>
