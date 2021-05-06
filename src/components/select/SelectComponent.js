@@ -61,4 +61,4 @@ export const SelectComponent = () => {
 }
 
 
-//TODO не клікабельні filter n sort, замінити іфки, create css file
+//TODO create css file
