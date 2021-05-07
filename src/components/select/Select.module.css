@@ -1,0 +1,18 @@
+.select {
+    width: 90%;
+    height: 30px;
+}
+
+.mainOption {
+    background-color: silver;
+}
+
+.generalOptions {
+    background-color: gainsboro;
+}
+
+.submit {
+    width: 10%;
+    height: 30px;
+    background-color: white;
+}

@@ -10,7 +10,7 @@ export * from './categories-filter/JeweleryCategory';
 export * from './categories-filter/ElectronicCategory';
 export * from './categories-filter/CategoriesButtons';
 export * from './categories-filter/WomanClothingCategory';
-export * from './select/SelectComponent';
+export * from './select/Select';
 export * from './sort/AscSortedProducts';
 export * from './sort/DescSortedProducts';
 export * from './black-part-with-text/BlackDiv';

@@ -1,0 +1,9 @@
+.headerCategories {
+    margin-top: 50px;
+}
+
+.wrapper {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -12,12 +12,11 @@ import {
     Products,
     CartPage,
     WishlistPage,
-    CategoriesButtons,
     ElectronicCategory,
     JeweleryCategory,
     MenClothingCategory,
     WomanClothingCategory,
-    SelectComponent,
+    Select,
     AscSortedProducts,
     DescSortedProducts
 } from "./components";
@@ -29,9 +28,7 @@ const App = () => {
             <Router>
                 <Header/>
                 <BlackDiv/>
-                <SelectComponent/>
-
-                {/*<CategoriesButtons/>*/}
+                <Select/>
 
                 <Switch>
                     <Route path="/" exact>
@@ -79,5 +76,3 @@ const App = () => {
 
 export default App;
 
-
-// todo black div with text

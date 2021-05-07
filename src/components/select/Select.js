@@ -1,7 +1,8 @@
 import React, {useState} from "react";
+import styles from './Select.module.css';
 import {useHistory} from "react-router-dom";
 
-export const SelectComponent = () => {
+export const Select = () => {
     const [select, setSelect] = useState('');
     const history = useHistory()
 
@@ -40,25 +41,22 @@ export const SelectComponent = () => {
         <div>
             <form onSubmit={onSubmit}>
                 <label>
-                    <select onChange={onChange} style={{width: '90%', height: '30px'}}>
-                        <option selected={true} disabled={true} style={{backgroundColor: 'silver'}}>Filter & Sort</option>
-                        <option disabled={true} style={{backgroundColor: 'gainsboro'}}>Sort</option>
+                    <select onChange={onChange} className={styles.select}>
+                        <option selected={true} disabled={true} className={styles.mainOption}>Filter & Sort</option>
+                        <option disabled={true} className={styles.generalOptions}>Sort</option>
                         <option value="asc">Lowest Price</option>
                         <option value="desc">Highest Price</option>
-                        <option disabled={true} style={{backgroundColor: 'gainsboro'}}>Filter</option>
+                        <option disabled={true} className={styles.generalOptions}>Filter</option>
                         <option value="electronics">Electronics</option>
                         <option value="jewelery">Jewelery</option>
                         <option value="men-clothing">Men`s Clothing</option>
                         <option value="woman-clothing">Woman`s Clothing</option>
                     </select>
                 </label>
-                <input type="submit" value="Submit"
-                       style={{width: "10%", height: '30px', backgroundColor: 'white'}}/>
+                <input type="submit" value="Submit" className={styles.submit}/>
             </form>
 
         </div>
     )
 }
 
-
-//TODO create css file
