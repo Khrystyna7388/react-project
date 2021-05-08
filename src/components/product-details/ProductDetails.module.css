@@ -1,0 +1,35 @@
+
+.wrapper {
+    display: flex;
+    margin: 20px 0 20px 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.divImage {
+    width: 40%;
+    height: 400px;
+}
+
+.productImage {
+    width: 70%;
+}
+
+.divText {
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.cartAndWishButtons {
+    height: 100px;
+    margin-left: 12%;
+    margin-top: 5%;
+}
+
+.rightWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+}

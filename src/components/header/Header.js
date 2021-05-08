@@ -8,7 +8,6 @@ import {CategoriesButtons} from "../categories-filter/CategoriesButtons";
 export const Header = () => {
     const history = useHistory();
 
-
     return (
         <header>
             <h1 className="store" onClick={() => history.push('/')}>STORE</h1>

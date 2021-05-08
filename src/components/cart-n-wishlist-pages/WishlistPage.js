@@ -1,15 +1,18 @@
 import React, {useEffect, useMemo} from "react";
+import styles from './Page.module.css';
 import {useDispatch, useSelector} from "react-redux";
 import {Loading} from "../loading/Loading";
-import {Item} from "./Item";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {URL} from "../../redux/services/url";
+import {ProductDetails} from "../product-details/ProductDetails";
 
 export const WishlistPage = () => {
     const {isLoading, productsInWishlist, wishlistItems, products} =
-        useSelector(({loading: {isLoading},
+        useSelector(({
+                         loading: {isLoading},
                          wishlist: {productsInWishlist, wishlistItems},
-                     products: {products}}) => ({
+                         products: {products}
+                     }) => ({
             isLoading,
             productsInWishlist,
             wishlistItems,
@@ -17,7 +20,7 @@ export const WishlistPage = () => {
         }))
 
     const calculatedWishlistSum = useMemo(() => {
-       return products.filter(el => productsInWishlist.includes(el.id))
+        return products.filter(el => productsInWishlist.includes(el.id))
             .reduce((acc, el) => acc += el.price, 0)
     }, [products, productsInWishlist])
 
@@ -30,14 +33,12 @@ export const WishlistPage = () => {
         <div>
             {isLoading && <Loading/>}
 
-            <h3>Total price: ${calculatedWishlistSum}</h3>
+            <h2 className={styles.price}>Total price: ${calculatedWishlistSum}</h2>
 
             {!isLoading && !!wishlistItems &&
             wishlistItems.filter(el => productsInWishlist.includes(el.id)).map(el =>
                 <div key={el.id}>
-                    <Item
-                        product={el}
-                    />
+                    <ProductDetails product={el}/>
                 </div>
             )}
 

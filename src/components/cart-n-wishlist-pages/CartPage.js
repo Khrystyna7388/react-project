@@ -1,15 +1,18 @@
 import React, {useEffect, useMemo} from "react";
+import styles from './Page.module.css';
 import {useDispatch, useSelector} from "react-redux";
 import {Loading} from "../loading/Loading";
-import {Item} from "./Item";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {URL} from "../../redux/services/url";
+import {ProductDetails} from "../product-details/ProductDetails";
 
 export const CartPage = () => {
     const {isLoading, cartItems, productsInCart, products} =
-        useSelector(({loading: {isLoading},
+        useSelector(({
+                         loading: {isLoading},
                          cart: {cartItems, productsInCart},
-                     products: {products}}) => ({
+                         products: {products}
+                     }) => ({
             isLoading,
             cartItems,
             productsInCart,
@@ -30,15 +33,13 @@ export const CartPage = () => {
         <div>
             {isLoading && <Loading/>}
 
-            <h3>Total price: ${calculatedCartSum}</h3>
+            <h2 className={styles.price}>Total price: ${calculatedCartSum}</h2>
 
             {!isLoading && !!cartItems &&
-                cartItems.filter(el => productsInCart.includes(el.id))
+            cartItems.filter(el => productsInCart.includes(el.id))
                 .map(el =>
                     <div key={el.id}>
-                        <Item
-                            product={el}
-                        />
+                        <ProductDetails product={el}/>
                     </div>)}
         </div>
     )

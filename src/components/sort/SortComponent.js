@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {URL} from "../../redux/services/url";
 import {Loading} from "../loading/Loading";
-import {Product} from "../products/product/Product";
+import {ProductDetails} from "../product-details/ProductDetails";
 
 export const SortComponent = ({sort}) => {
     const {isLoading, sortedProductsList} =
@@ -18,14 +18,16 @@ export const SortComponent = ({sort}) => {
         dispatch(fetchData(URL))
     }, [])
 
+    const sortedProducts = sortedProductsList.sort(sort);
+
     return(
         <div>
             {isLoading && <Loading/>}
 
             {!isLoading && !!sortedProductsList &&
-            sortedProductsList.sort(sort)
-                .map(el => <div key={el.id} style={{width: '60%', margin: '0 20% 0 20%'}}>
-                    <Product product={el}/>
+                sortedProducts
+                .map(el => <div key={el.id}>
+                    <ProductDetails product={el}/>
                 </div>)
             }
 

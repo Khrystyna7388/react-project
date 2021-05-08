@@ -38,11 +38,13 @@ export const Select = () => {
     }
 
     return (
-        <div>
+        <div className={styles.wrapper}>
             <form onSubmit={onSubmit}>
                 <label>
                     <select onChange={onChange} className={styles.select}>
-                        <option selected={true} disabled={true} className={styles.mainOption}>Filter & Sort</option>
+                        <option selected={true} disabled={true} className={styles.mainOption}>
+                            Filter & Sort for all Products
+                        </option>
                         <option disabled={true} className={styles.generalOptions}>Sort</option>
                         <option value="asc">Lowest Price</option>
                         <option value="desc">Highest Price</option>

@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import {Loading} from "../loading/Loading";
-import {ProductInProductDetails} from "./ProductInProductDetails";
+import {ProductDetails} from "./ProductDetails";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {URL} from "../../redux/services/url";
 
@@ -27,8 +27,7 @@ export const ProductDetailsPage = () => {
             {isLoading && <Loading/>}
 
             {!isLoading && !!singleProduct &&
-
-            <ProductInProductDetails
+            <ProductDetails
                 product={singleProduct}
             />
             }
