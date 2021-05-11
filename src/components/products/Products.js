@@ -26,12 +26,10 @@ export const Products = () => {
     //     dispatch(fetchData(`${URL}?${qsHelper({limit: currentLimit})}`))
     // }, [currentLimit])
 
-    // useEffect(() => {
-    //     dispatch(fetchData(process.env.REACT_APP_URL))
-    // }, [])
-
     useEffect(() => {
-        dispatch(fetchData(URL))
+        // dispatch(fetchData(process.env["REACT_APP_URL "]))
+        dispatch(fetchData(process.env.REACT_APP_URL))
+        // dispatch(fetchData(URL))
     }, [])
 
     console.log(products)

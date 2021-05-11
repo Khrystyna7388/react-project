@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../redux/services/value-action-creactors";
-import {URL} from "../../redux/services/url";
 import {Loading} from "../loading/Loading";
 import {ProductDetails} from "../product-details/ProductDetails";
+import {URL} from "../../redux/services/url";
 
-export const SortComponent = ({sort}) => {
+export const SortComponent = ({sortType}) => {
     const {isLoading, sortedProductsList} =
         useSelector(({loading: {isLoading}, sort: {sortedProductsList}}) => ({
             isLoading,
@@ -15,17 +15,33 @@ export const SortComponent = ({sort}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchData(URL))
+        // dispatch(fetchData(process.env["REACT_APP_URL "]))
+        dispatch(fetchData(process.env.REACT_APP_URL))
+        // dispatch(fetchData(URL))
     }, [])
+
+    let sort;
+
+    switch (sortType) {
+        case 'asc':
+            sort = (a, b) => a.price - b.price
+            break;
+        case 'desc':
+            sort = (a, b) => b.price - a.price
+            break;
+        default:
+            alert('Please, select the correct option');
+    }
+
 
     const sortedProducts = sortedProductsList.sort(sort);
 
-    return(
+    return (
         <div>
             {isLoading && <Loading/>}
 
             {!isLoading && !!sortedProductsList &&
-                sortedProducts
+            sortedProducts
                 .map(el => <div key={el.id}>
                     <ProductDetails product={el}/>
                 </div>)

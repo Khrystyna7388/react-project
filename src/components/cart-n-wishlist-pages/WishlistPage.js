@@ -3,8 +3,8 @@ import styles from './Page.module.css';
 import {useDispatch, useSelector} from "react-redux";
 import {Loading} from "../loading/Loading";
 import {fetchData} from "../../redux/services/value-action-creactors";
-import {URL} from "../../redux/services/url";
 import {ProductDetails} from "../product-details/ProductDetails";
+import {URL} from "../../redux/services/url";
 
 export const WishlistPage = () => {
     const {isLoading, productsInWishlist, wishlistItems, products} =
@@ -27,7 +27,9 @@ export const WishlistPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchData(URL));
+        // dispatch(fetchData(process.env["REACT_APP_URL "]));
+        dispatch(fetchData(process.env.REACT_APP_URL))
+        // dispatch(fetchData(URL))
     }, [])
     return (
         <div>

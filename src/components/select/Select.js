@@ -11,10 +11,10 @@ export const Select = () => {
 
         switch (select) {
             case 'asc' :
-                history.push('/asc=sort')
+                history.push('/asc')
                 break;
             case 'desc' :
-                history.push('/desc=sort')
+                history.push('/desc')
                 break;
             case  'electronics' :
                 history.push('/categories/electronics')

@@ -12,15 +12,11 @@ import {
     Products,
     CartPage,
     WishlistPage,
-    ElectronicCategory,
-    JeweleryCategory,
-    MenClothingCategory,
-    WomanClothingCategory,
     Select,
-    AscSortedProducts,
-    DescSortedProducts
+    BlackDiv,
+    CategoryComponent
 } from "./components";
-import {BlackDiv} from "./components/black-part-with-text/BlackDiv";
+import {SortComponent} from "./components/sort/SortComponent";
 
 const App = () => {
     return (
@@ -48,24 +44,24 @@ const App = () => {
                     </Route>
 
                     <Route path="/categories/electronics">
-                        <ElectronicCategory/>
+                        <CategoryComponent category={'electronics'}/>
                     </Route>
                     <Route path="/categories/jewelery">
-                        <JeweleryCategory/>
+                        <CategoryComponent category={'jewelery'}/>
                     </Route>
                     <Route path="/categories/men-clothing">
-                        <MenClothingCategory/>
+                        <CategoryComponent category={'men\'s clothing'}/>
                     </Route>
                     <Route path="/categories/woman-clothing">
-                        <WomanClothingCategory/>
+                        <CategoryComponent category={'women\'s clothing'}/>
                     </Route>
 
-                    <Route path="/asc=sort">
-                        <AscSortedProducts/>
+                    <Route path="/asc">
+                        <SortComponent sortType={'asc'}/>
                     </Route>
 
-                    <Route path="/desc=sort">
-                        <DescSortedProducts/>
+                    <Route path="/desc">
+                        <SortComponent sortType={'desc'}/>
                     </Route>
 
                 </Switch>

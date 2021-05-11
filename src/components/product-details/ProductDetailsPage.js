@@ -19,6 +19,7 @@ export const ProductDetailsPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        // dispatch(fetchData(`${process.env["REACT_APP_URL "]}/${params.id}`))
         dispatch(fetchData(`${URL}/${params.id}`))
     }, [])
 
