@@ -4,7 +4,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {Loading} from "../loading/Loading";
 import {Product} from "../products/product/Product";
-import {URL} from "../../redux/services/url";
 
 export const CategoryComponent = ({category}) => {
     const {categoryProducts, isLoading} =
@@ -15,9 +14,7 @@ export const CategoryComponent = ({category}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // dispatch(fetchData(process.env["REACT_APP_URL "]))
         dispatch(fetchData(process.env.REACT_APP_URL))
-        // dispatch(fetchData(URL))
     }, [])
 
     const filteredCategoryProducts = categoryProducts.filter(el => el.category === category)

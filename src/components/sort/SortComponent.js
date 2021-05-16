@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../redux/services/value-action-creactors";
 import {Loading} from "../loading/Loading";
 import {ProductDetails} from "../product-details/ProductDetails";
-import {URL} from "../../redux/services/url";
 
 export const SortComponent = ({sortType}) => {
     const {isLoading, sortedProductsList} =
@@ -15,9 +14,7 @@ export const SortComponent = ({sortType}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // dispatch(fetchData(process.env["REACT_APP_URL "]))
         dispatch(fetchData(process.env.REACT_APP_URL))
-        // dispatch(fetchData(URL))
     }, [])
 
     let sort;
